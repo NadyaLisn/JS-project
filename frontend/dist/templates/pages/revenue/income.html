@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../styles/bootstrap.min.css">
+    <link href="../styles/sidebars.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../styles/my-styles.css">
+    <title>Доходы</title>
+</head>
+<body>
+
+<main>
+    <div class="d-flex flex-column flex-shrink-0  my-sidebar" style="width: 218px; height: 100vh">
+        <div class="logo-item">
+            <a href="/" class="d-flex align-items-center  text-decoration-none">
+                <img src="../static/images/logo.png" alt="" class="logo">
+            </a>
+        </div>
+
+
+        <ul class="nav nav-pills flex-column mb-auto nav-left p-3">
+            <li class="nav-item">
+                <a href="#" class="nav-link active">
+                    <div>
+                        <i class="bi bi-house"></i>
+                    </div>
+                    <div class="sidebar-link">
+                        Главная
+                    </div>
+
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link">
+                    <div>
+                        <i class="bi bi-cash-coin"></i>
+                    </div>
+                    <div class="sidebar-link">
+                        Доходы & Расходы
+                    </div>
+
+                </a>
+            </li>
+            <li>
+                <div class="group">
+                    <div class="btn-group" style="width: 100%">
+                        <button class="btn  dropdown-toggle my-btn" type="button" data-bs-toggle="dropdown"
+                                data-bs-auto-close="true" aria-expanded="false">
+                            Категории
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="my-arrow"
+                                 id="my-arrow">
+                                <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                                <path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="my-arrow-open">
+                                <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                                <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/>
+                            </svg>
+                        </button>
+                        <ul class="dropdown-menu" style="width: 100%">
+                            <li><a class="dropdown-item" href="#">Доходы</a></li>
+                            <li><a class="dropdown-item" href="#">Расходы</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </li>
+        </ul>
+        <div class="balance p-3">
+            <div class="balance-title">Баланс:</div>
+            <div class="balance-amount" id="balance">500$</div>
+        </div>
+
+        <div class="dropdown d-flex align-items-center gap-2 p-3 user-item">
+            <div class="user-icon d-flex align-items-center">
+                <img src="../static/images/person.png" alt="пользователь">
+            </div>
+
+            <div class="user" id="user-name">Roman</div>
+            <div class="user" id="user-lastname">Chernov</div>
+        </div>
+    </div>
+
+
+
+    <section class="main revenue-page">
+        <div>
+            <div class="main-title">
+                Доходы
+            </div>
+            <div class="row g-3">
+                <div class="col-sm-4 mb-3 mb-sm-0">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Депозиты</h5>
+                            <div class="d-flex gap-2 flex-sm-wrap">
+                                <a href="#" class="btn btn-primary">Редактировать</a>
+                                <a href="#" type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                   data-bs-target="#exampleModal">Удалить</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 mb-3 mb-sm-0">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Зарплата</h5>
+                            <div class="d-flex gap-2 flex-sm-wrap">
+                                <a href="#" class="btn btn-primary">Редактировать</a>
+                                <a href="#" type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                   data-bs-target="#exampleModal">Удалить</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 mb-3 mb-sm-0">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Сбережения</h5>
+                            <div class="d-flex gap-2 flex-sm-wrap">
+                                <a href="#" class="btn btn-primary">Редактировать</a>
+                                <a href="#" type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                   data-bs-target="#exampleModal">Удалить</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 mb-3 mb-sm-0">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Инвестиции</h5>
+                            <div class="d-flex gap-2 flex-sm-wrap">
+                                <a href="#" class="btn btn-primary">Редактировать</a>
+                                <a href="#" type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                   data-bs-target="#exampleModal">Удалить</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 mb-3 mb-sm-0">
+                    <div class="card revenue-add">
+
+                        <a href="#" class="text-decoration-none">+</a>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Вы действительно хотите удалить категорию?
+                            Связанные доходы будут удалены навсегда.</h1>
+<!--                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+                    </div>
+                    <div class="modal-body">
+                        <button type="button" class="btn btn-success mx-2" data-bs-dismiss="modal">Да, удалить</button>
+                        <button type="button" class="btn btn-danger">Не удалять</button>
+                    </div>
+<!--                    <div class="modal-footer">-->
+<!--                       -->
+<!--                    </div>-->
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+</main>
+
+<script src="../scripts/bootstrap.bundle.js"></script>
+<script src="../scripts/bootstrap.js"></script>
+<script src="../scripts/sidebars.js"></script>
+</body>
+</html>

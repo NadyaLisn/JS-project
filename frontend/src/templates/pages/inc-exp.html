@@ -1,0 +1,97 @@
+<main>
+    <section class="main">
+        <div>
+            <div class="main-title">
+                Доходы и расходы
+            </div>
+            <div class="rev-exp-action mb-5">
+                <button type="button" class="btn btn-success">Создать доход</button>
+                <button type="button" class="btn btn-danger mx-2">Создать расход</button>
+            </div>
+            <div class="date-list d-flex align-items-center list-rev-exp">
+                <ul class="nav nav-pills gap-2 align-items-center">
+                    <li class="nav-item-main nav-main-active">
+                        <a class="nav-link nav-link-active" aria-current="page" href="#">Сегодня</a>
+                    </li>
+                    <li class="nav-item-main">
+                        <a class="nav-link" href="#">Неделя</a>
+                    </li>
+                    <li class="nav-item-main">
+                        <a class="nav-link" href="#">Месяц</a>
+                    </li>
+                    <li class="nav-item-main">
+                        <a class="nav-link" href="#">Год</a>
+                    </li>
+                    <li class="nav-item-main">
+                        <a class="nav-link" href="#">Все</a>
+                    </li>
+                    <li class="nav-item-main">
+                        <a class="nav-link" href="#">Интервал</a>
+                    </li>
+                    <li class="nav-item-main">
+                        <div class="interval d-flex r">
+                            <div class="interval-from">
+                                <span class="mx-1">с</span>
+                                <a href="#" id="interval-from" class="mx-3">Дата</a>
+                            </div>
+                            <div class="interval-to">
+                                <span class="mx-2">по</span>
+                                <a href="#" id="interval-to">Дата</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="mt-5 table">
+
+            <table class="table">
+                <thead class="border-top">
+                <tr>
+                    <th scope="col">№ операции</th>
+                    <th scope="col">Тип</th>
+                    <th scope="col">Категория</th>
+                    <th scope="col">Сумма</th>
+                    <th scope="col">Дата</th>
+                    <th scope="col">Комментарий</th>
+                    <th scope="col"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row" id="number">1</th>
+                    <td id="type-category">Доход</td>
+                    <td id="category">Зарплата</td>
+                    <td id="amount">500$</td>
+                    <td id="date-category">11.09.2022</td>
+                    <td id="comment" class="col-2"></td>
+                    <td id="icon-table">
+                        <a href="#" type="button" class="icon-table mx-2" data-bs-toggle="modal"
+                           data-bs-target="#exampleModal">
+                            <i class="bi bi-trash"></i>
+                        </a>
+                        <a href="#" class="icon-table">
+                            <i class="bi bi-pencil"></i>
+                        </a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered ">
+                <div class="modal-content p-3">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5 text-nowrap" id="exampleModalLabel">Вы действительно хотите удалить
+                            операцию? </h1>
+                    </div>
+                    <div class="modal-body">
+                        <button type="button" class="btn btn-success mx-2" data-bs-dismiss="modal">Да, удалить</button>
+                        <button type="button" class="btn btn-danger">Не удалять</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
