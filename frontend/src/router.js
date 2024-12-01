@@ -65,7 +65,7 @@ export class Router {
                 filePathTemplate: '/templates/pages/income/income.html',
                 useLayout: '/templates/layout.html',
                 load: () => {
-                    new CategoryIncome();
+                    new CategoryIncome(this.openNewRoute.bind(this));
                 },
             },
             {
