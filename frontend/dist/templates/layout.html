@@ -1,18 +1,14 @@
 <main class="d-flex">
-
     <div class="d-flex flex-column flex-shrink-0  my-sidebar" style="width: 218px; height: 100vh">
         <div class="logo-item">
             <a href="/" class="d-flex align-items-center  text-decoration-none">
                 <img src="/images/logo.png" alt="" class="logo">
             </a>
         </div>
-
-
         <ul class="nav nav-pills flex-column mb-auto nav-left p-3 sidebar">
             <li class="nav-item">
-                <a href="/" class="nav-link" >
+                <a href="/" class="nav-link">
                     <div>
-                        <!--                        <i class="bi bi-house"></i>-->
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                              class="bi bi-house" viewBox="0 0 16 16">
                             <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
@@ -21,13 +17,11 @@
                     <div class="sidebar-link">
                         Главная
                     </div>
-
                 </a>
             </li>
             <li>
                 <a href="/expense-income" class="nav-link">
                     <div>
-                        <!--                        <i class="bi bi-cash-coin"></i>-->
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                              class="bi bi-cash-coin" viewBox="0 0 16 16">
                             <path fill-rule="evenodd"
@@ -40,31 +34,28 @@
                     <div class="sidebar-link">
                         Доходы & Расходы
                     </div>
-
                 </a>
             </li>
             <li>
-                <div class="group">
-                    <div class="btn-group" style="width: 100%">
-                        <button class="btn  dropdown-toggle my-btn nav-link" type="button" data-bs-toggle="dropdown" >
-                            Категории
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="my-arrow"
-                                 id="my-arrow">
-                                <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                                <path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/>
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="my-arrow-open">
-                                <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                                <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/>
-                            </svg>
-                        </button>
-                        <ul class="dropdown-menu" style="width: 100%">
-                            <li><a class="dropdown-item nav-link" href="/categories/income">Доходы</a></li>
-                            <li><a class="dropdown-item nav-link" href="/categories/expense">Расходы</a></li>
-                        </ul>
-                    </div>
+                <div class="btn-group" style="width: 100%">
+                    <button class="btn  dropdown-toggle my-btn" type="button" data-bs-toggle="dropdown"
+                            data-bs-auto-close="false" aria-expanded="false">
+                        Категории
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="my-arrow"
+                             id="my-arrow">
+                            <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="my-arrow-open">
+                            <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/>
+                        </svg>
+                    </button>
+                    <ul class="dropdown-menu" style="width: 100%">
+                        <li><a class="dropdown-item nav-link" href="/categories/income">Доходы</a></li>
+                        <li><a class="dropdown-item nav-link" href="/categories/expense">Расходы</a></li>
+                    </ul>
                 </div>
-
             </li>
         </ul>
         <div class="balance p-3">
@@ -79,19 +70,14 @@
                                                                              alt="пользователь"></button>
                 <ul class="dropdown-menu">
                     <li>
-                        <a href="/logout" class="dropdown-item" type="button" >Logout</a>
+                        <a href="/logout" class="dropdown-item" type="button">Logout</a>
                     </li>
                 </ul>
-
             </div>
-
-
             <div class="user" id="user-name">Roman</div>
             <div class="user" id="user-lastname">Chernov</div>
         </div>
-
     </div>
     <div class="content-page" id="content-page">
-
     </div>
 </main>

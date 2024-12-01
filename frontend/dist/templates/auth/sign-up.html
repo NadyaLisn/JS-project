@@ -1,12 +1,3 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <link rel="stylesheet" href="../styles/my-styles.css">-->
-<!--    <link rel="stylesheet" href="../styles/bootstrap.min.css">-->
-<!--    <title>Title</title>-->
-<!--</head>-->
-<!--<body>-->
 <div class="login">
     <div class="login-title">
         <img src="/images/logo.png" alt="" class="logo-login m-5">
@@ -20,13 +11,8 @@
         <form>
             <div class="input-group mb-3">
                 <span class="input-group-text"><img src="/images/person.png" alt=""></span>
-                <input type="email" class="form-control" placeholder="Имя" id="name">
-                <span id="name-error" class="error invalid-feedback">Введите своё имя</span>
-            </div>
-            <div class="input-group mb-3">
-                <span class="input-group-text"><img src="/images/person.png" alt=""></span>
-                <input type="email" class="form-control" placeholder="Фамилия" id="last-name">
-                <span id="last-name-error" class="error invalid-feedback">Введите свою фамилию</span>
+                <input type="email" class="form-control" placeholder="ФИО" id="name">
+                <span id="name-error" class="error invalid-feedback">Введите ваше полное имя. Каждое слово с большой буквы.</span>
             </div>
             <div class="input-group mb-3"><span class="input-group-text"><img src="/images/mail.png" alt=""></span>
                 <input type="email" class="form-control" placeholder="Электронная почта" id="email">
@@ -37,7 +23,8 @@
                          src="/images/lock.png" alt=""></span>
                 <input type="password" class="form-control" placeholder="Пароль" id="password">
 
-                <span id="password-error" class="error invalid-feedback">Заполните пароль</span>
+                <span id="password-error" class="error invalid-feedback">Заполните пароль. Пароль должен быть не менее 8 символов,
+                    содержать минимум одну цифру и минимум одну букву в верхнем регистре, латинские буквы</span>
             </div>
             <div class="input-group mb-3">
                  <span class="input-group-text"><img
@@ -64,6 +51,3 @@
         <div class="account">Уже есть аккаунт? <a href="/login" class="mx-2">Войдите в систему</a></div>
     </div>
 </div>
-
-<!--</body>-->
-<!--</html>-->

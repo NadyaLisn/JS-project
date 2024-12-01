@@ -1,6 +1,8 @@
-import config from "../../config/config.js";
+import config from "../config/config";
+
 
 export class Auth {
+
 
     static accessTokenKey = 'accessToken';
     static refreshTokenKey = 'refreshToken';

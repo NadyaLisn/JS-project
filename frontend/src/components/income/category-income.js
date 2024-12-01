@@ -1,4 +1,6 @@
 import {HttpUtils} from "../../utils/http-utils";
+import config from "../../config/config";
+
 
 export class CategoryIncome {
     constructor(openNewRoute) {
@@ -9,6 +11,9 @@ export class CategoryIncome {
 
     async getCategoryIncome() {
         const result = await HttpUtils.request('/categories/income');
+        if(result.redirect) {
+            return this.openNewRoute(result.redirect)
+        }
 
         console.log(result)
 
@@ -20,8 +25,8 @@ export class CategoryIncome {
         this.showRecords(result.response)
     }
 
-    showRecords() {
-
+    showRecords(incomeList) {
+console.log(incomeList)
     }
 
 }

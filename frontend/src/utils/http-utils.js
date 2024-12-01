@@ -1,7 +1,9 @@
-import {Auth} from "./auth";
 import config from "../config/config";
+import {Auth} from "./auth";
+
 
 export class HttpUtils {
+
 
     static async request(url, method = "GET",
                          // useAuth = true,
@@ -19,27 +21,24 @@ export class HttpUtils {
                 'Accept': 'application/json',
             },
         };
-        // let token = null;
-        // if (useAuth) {
-        //     token = Auth.getAuthInfo(Auth.accessTokenKey);
-        //     if (token) {
-        //         params.headers['authorization'] = token;
-        //     }
-        //
-        // }
+        let token = null;
+
+        token = Auth.getAuthInfo(Auth.accessTokenKey);
+        if (token) {
+            params.headers['x-auth-token'] = token;
+
+
+        }
 
         if (body) {
             params.body = JSON.stringify(body);
         }
 
         let response = null;
-        try {
-            response = await fetch(config.api + url, params);
-            result.response = await response.json();
-        } catch (e) {
-            result.error = true;
-            return result;
-        }
+
+        response = await fetch(config.api + url, params);
+        result.response = await response.json();
+
 
         if (response.status < 200 || response.status >= 300) {
             result.error = true;
