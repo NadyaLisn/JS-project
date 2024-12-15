@@ -51,12 +51,12 @@ body {
     .account {
       font-size: 12px;
     }
-
   }
 }
 
 main {
   overflow: hidden;
+
   .my-sidebar {
     border-right: 1px solid #D9D9D9;
   }
@@ -160,18 +160,16 @@ main {
 
 }
 
-.main {
+.page {
   padding-top: 100px;
   padding-left: 60px;
 
-
-  .main-title {
+  .page-title {
     font-size: 40px;
     margin-bottom: 60px;
     color: #052C65;
     font-weight: bold;
   }
-
 
   .nav-item-main:not(:last-child) {
     border: solid 1px rgb(108, 117, 125);
@@ -183,28 +181,22 @@ main {
   }
 
 
-  .nav-item-main .nav-link {
+  .nav-item-main {
     justify-content: center;
     color: #6C757D;
+    font-size: 16px;
     /*font-weight: bold;*/
   }
 
-  .nav-main-active {
+  .interval-to-span {
+    color: rgb(0, 0, 0);
+  }
+
+  .nav-item-main:focus {
     background: rgb(108, 117, 125);
     border: transparent;
-  }
-
-
-  .nav-item-main .nav-link-active {
     color: white;
   }
-
-  .interval-from a, .interval-to a {
-    color: #6C757D;
-    text-decoration: none;
-    border-bottom: 1px solid #6C757D;
-  }
-
 
   /*charts*/
 
@@ -214,30 +206,19 @@ main {
     padding-bottom: 173px;
   }
 
-  .income {
+  .chart-col {
     width: 600px;
-    margin-right: 84px;
   }
 
-  .income {
-    width: 600px;
-    margin-right: 84px;
-    border-right: 1px solid #D9D9D9;;
+  .chart-col:not(:last-child) {
+    border-right: 1px solid #D9D9D9;
   }
 
-  .income-title {
-    text-align: center;
-    color: #290661;
-    font-size: 28px;
-    font-weight: bold;
+  .chart-canvas {
+    padding: 20px 50px 0 50px;
   }
 
-  .expenses {
-    width: 437px;
-    margin-left: 84px;
-  }
-
-  .expenses-title {
+  .chart-title {
     text-align: center;
     color: #290661;
     font-size: 28px;
@@ -252,12 +233,11 @@ main {
 
   .income-add {
     display: flex;
-    height: 100%;
     justify-content: center;
     align-items: center;
   }
 
-  .income-add a {
+  .income-href {
     color: rgb(206, 212, 218);
     font-weight: bold;
   }
@@ -268,9 +248,11 @@ main {
     font-weight: bold;
     margin-bottom: 10px;
   }
-
+.card {
+  min-width: 350px;
+  min-height: 120px;
 }
-
+}
 
 /*modal*/
 .modal-header {
@@ -290,7 +272,6 @@ main {
 
 /*expenses*/
 
-
 @media (max-width: 426px) {
   .card-title {
     font-size: 26px;
@@ -302,4 +283,12 @@ main {
   color: black;
 }
 
+
+.data-choice {
+  border: none;
+  border-bottom: 1px solid #6C757D;
+  cursor: pointer;
+  color: rgb(108, 117, 125);
+
+}
 

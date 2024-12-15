@@ -5,11 +5,16 @@ import {SignUp} from "./components/auth/sign-up";
 import {Logout} from "./components/auth/logout";
 import {CategoryIncome} from "./components/income/category-income";
 import {CategoryExpenses} from "./components/expenses/category-expenses";
-import {IncExp} from "./components/inc-exp";
 import {CategoryIncomeCreate} from "./components/income/category-income-create";
 import {CategoryIncomeEdit} from "./components/income/category-income-edit";
 import {CategoryExpensesCreate} from "./components/expenses/category-expenses-create";
 import {CategoryExpensesEdit} from "./components/expenses/category-expenses-edit";
+import {Operations} from "./components/operations/operations";
+import {OperationsDelete} from "./components/operations/operations-delete";
+import {OperationsEdit} from "./components/operations/operations-edit";
+import {OperationsCreate} from "./components/operations/operations-create";
+import {HttpUtils} from "./utils/http-utils";
+import {Auth} from "./utils/auth";
 
 export class Router {
     constructor() {
@@ -49,7 +54,7 @@ export class Router {
             {
                 route: '/404',
                 title: 'Страница не найдена',
-                filePathTemplate: '/templates/404.html',
+                filePathTemplate: '/templates/pages/404.html',
                 useLayout: false,
 
             },
@@ -74,16 +79,7 @@ export class Router {
                 filePathTemplate: '/templates/pages/expenses/expenses.html',
                 useLayout: '/templates/layout.html',
                 load: () => {
-                    new CategoryExpenses();
-                },
-            },
-            {
-                route: '/expense-income',
-                title: 'Расходы',
-                filePathTemplate: '/templates/pages/inc-exp.html',
-                useLayout: '/templates/layout.html',
-                load: () => {
-                    new IncExp();
+                    new CategoryExpenses(this.openNewRoute.bind(this));
                 },
             },
             {
@@ -92,7 +88,7 @@ export class Router {
                 filePathTemplate: '/templates/pages/income/income-category-create.html',
                 useLayout: '/templates/layout.html',
                 load: () => {
-                    new CategoryIncomeCreate();
+                    new CategoryIncomeCreate(this.openNewRoute.bind(this));
                 },
             },
             {
@@ -101,16 +97,16 @@ export class Router {
                 filePathTemplate: '/templates/pages/income/income-category-edit.html',
                 useLayout: '/templates/layout.html',
                 load: () => {
-                  new CategoryIncomeEdit();
+                    new CategoryIncomeEdit(this.openNewRoute.bind(this));
                 },
             },
             {
                 route: '/expenses-category-create',
-                title: 'Создание категории доходов',
+                title: 'Создание категории расходов',
                 filePathTemplate: '/templates/pages/expenses/expenses-category-create.html',
                 useLayout: '/templates/layout.html',
                 load: () => {
-                  new CategoryExpensesCreate();
+                    new CategoryExpensesCreate(this.openNewRoute.bind(this));
                 },
             },
             {
@@ -119,9 +115,43 @@ export class Router {
                 filePathTemplate: '/templates/pages/expenses/expenses-category-edit.html',
                 useLayout: '/templates/layout.html',
                 load: () => {
-                new CategoryExpensesEdit();
+                    new CategoryExpensesEdit(this.openNewRoute.bind(this));
                 },
             },
+            {
+                route: '/operations',
+                title: 'Доходы и расходы',
+                filePathTemplate: '/templates/pages/operations/operations.html',
+                useLayout: '/templates/layout.html',
+                load: () => {
+                    new Operations(this.openNewRoute.bind(this));
+                },
+            },
+            {
+                route: '/operations-edit',
+                title: 'Редактирование',
+                filePathTemplate: '/templates/pages/operations/operations-edit.html',
+                useLayout: '/templates/layout.html',
+                load: () => {
+                    new OperationsEdit(this.openNewRoute.bind(this));
+                },
+            },
+            {
+                route: '/operations-create',
+                title: 'Создание дохода/расхода',
+                filePathTemplate: '/templates/pages/operations/operations-create.html',
+                useLayout: '/templates/layout.html',
+                load: () => {
+                    new OperationsCreate(this.openNewRoute.bind(this))
+                },
+            },
+            {
+                route: '/operations-delete',
+                load: () => {
+                    new OperationsDelete(this.openNewRoute.bind(this))
+                },
+            },
+
         ]
     }
 
@@ -134,6 +164,7 @@ export class Router {
     async openNewRoute(url) {
         history.pushState({}, '', url);
         await this.activateRoute();
+
     }
 
     async activateRoute() {
@@ -149,7 +180,9 @@ export class Router {
                 if (newRoute.useLayout) {
                     this.contentPageElement.innerHTML = await fetch(newRoute.useLayout).then(response => response.text())
                     contentBlock = document.getElementById('content-page');
-                    this.activateMenuItem(newRoute)
+                    this.activateMenuItem(newRoute);
+                    this.balanceAll().then();
+                    this.userName().then();
                 }
                 contentBlock.innerHTML = await fetch(newRoute.filePathTemplate).then(response => response.text())
             }
@@ -180,6 +213,7 @@ export class Router {
             await this.openNewRoute(url);
         }
     }
+
     activateMenuItem(route) {
         document.querySelectorAll('.sidebar .nav-link').forEach(item => {
             const href = item.getAttribute('href');
@@ -189,5 +223,28 @@ export class Router {
                 item.classList.remove('active');
             }
         })
+    }
+
+
+//баланс
+    async balanceAll() {
+        this.balanceShowElement = document.getElementById('balance');
+        try {
+            const result = await HttpUtils.request('/balance');
+            if (result) {
+                this.balanceShowElement.innerText =  result.response.balance;
+            } else {
+                alert('Ошибка при получении баланса, обратитесь в поддержку');
+            }
+        } catch {
+            alert('Ошибка при получении баланса, обратитесь в поддержку');;
+        }
+    }
+
+    async userName() {
+        this.userNameElement = document.getElementById('user-full-name');
+        const userInfo =  Auth.getAuthInfo(Auth.userInfoTokenKey);
+        let userName = JSON.parse(userInfo);
+        this.userNameElement.innerText = userName.name + ' ' + userName.lastName;
     }
 }

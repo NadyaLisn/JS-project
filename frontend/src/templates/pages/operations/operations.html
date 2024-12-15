@@ -1,0 +1,95 @@
+<main>
+    <section class="main page">
+        <div>
+            <div class="page-title">
+                Доходы и расходы
+            </div>
+            <div class="rev-exp-action mb-5">
+                <button type="button" id="btn-create-income" class="btn btn-success">Создать доход</button>
+                <button type="button" id="btn-create-expense" class="btn btn-danger mx-2">Создать расход</button>
+            </div>
+            <div class="date-list d-flex align-items-center list-rev-exp">
+
+                <button type="button" class="btn nav-item-main ">Сегодня</button>
+                <button type="button" class="btn nav-item-main nav-main" data-period="week" id="period-week">Неделя</button>
+                <button type="button" class="btn nav-item-main nav-main" data-period="month" id="period-month">Месяц</button>
+                <button type="button" class="btn nav-item-main nav-main" data-period="year" id="period-year">Год</button>
+                <button type="button" class="btn nav-item-main nav-main" data-period="all" id="period-all">Все</button>
+                <button type="button" class="btn  nav-item-main nav-main" data-period="interval" id="period-interval">Интервал
+                </button>
+                    <div class="nav-item-main d-flex align-items-center">
+                        <div class="interval d-flex r">
+                            <div class="interval-from d-flex align-items-center">
+                                <div
+                                        class="mx-4">с</div>
+                                <div>
+                                    <input type="date" class="data-choice" id="interval-from">
+                                    <span id="interval-from-error" class="error invalid-feedback">Дата начала</span>
+                                </div>
+
+                            </div>
+                            <div class="interval-to d-flex align-items-center">
+                                <span class="mx-4">по</span>
+                                <div>
+                                    <input type="date" class="data-choice" id="interval-to">
+                                    <span id="interval-from-to-error" class="error invalid-feedback ">Дата окончания</span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+            </div>
+        </div>
+        <div class="mt-5 table">
+
+            <table class="table">
+                <thead class="border-top">
+                <tr>
+                    <th scope="col">№ операции</th>
+                    <th scope="col">Тип</th>
+                    <th scope="col">Категория</th>
+                    <th scope="col">Сумма</th>
+                    <th scope="col">Дата</th>
+                    <th scope="col">Комментарий</th>
+                    <th scope="col"></th>
+                </tr>
+                </thead>
+                <tbody id="tableData">
+                <!--                <tr>-->
+                <!--                    <th scope="row" id="number">1</th>-->
+                <!--                    <td id="type-category">Доход</td>-->
+                <!--                    <td id="category">Зарплата</td>-->
+                <!--                    <td id="amount">500$</td>-->
+                <!--                    <td id="date-category">11.09.2022</td>-->
+                <!--                    <td id="comment" class="col-2"></td>-->
+                <!--                    <td id="icon-table">-->
+                <!--                        <a href="#" type="button" class="icon-table mx-2" data-bs-toggle="modal"-->
+                <!--                           data-bs-target="#exampleModal">-->
+                <!--                            <img src="/images/trash-icon.png" alt="">-->
+                <!--                        </a>-->
+                <!--                        <a href="#" class="icon-table">-->
+                <!--                            <img src="/images/pen-icon.png" alt="">-->
+                <!--                        </a>-->
+                <!--                    </td>-->
+                <!--                </tr>-->
+                </tbody>
+            </table>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered ">
+                <div class="modal-content p-3">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5 text-nowrap" id="exampleModalLabel">Вы действительно хотите удалить
+                            операцию? </h1>
+                    </div>
+                    <div class="modal-body">
+                        <button type="button" class="btn btn-success mx-2" data-bs-dismiss="modal" id="operation-delete">Да, удалить</button>
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" >Не удалять</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

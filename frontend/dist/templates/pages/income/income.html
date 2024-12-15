@@ -4,60 +4,60 @@
             <div class="main-title">
                 Доходы
             </div>
-            <div class="row g-3">
-                <div class="col-sm-4 mb-3 mb-sm-0">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Депозиты</h5>
-                            <div class="d-flex gap-2 flex-sm-wrap">
-                                <a href="/income-category-edit" class="btn btn-primary">Редактировать</a>
-                                <a href="#" type="button" class="btn btn-danger" data-bs-toggle="modal"
-                                   data-bs-target="#exampleModal">Удалить</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 mb-3 mb-sm-0">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Зарплата</h5>
-                            <div class="d-flex gap-2 flex-sm-wrap">
-                                <a href="/income-category-edit" class="btn btn-primary">Редактировать</a>
-                                <a href="#" type="button" class="btn btn-danger" data-bs-toggle="modal"
-                                   data-bs-target="#exampleModal">Удалить</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 mb-3 mb-sm-0">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Сбережения</h5>
-                            <div class="d-flex gap-2 flex-sm-wrap">
-                                <a href="/income-category-edit" class="btn btn-primary">Редактировать</a>
-                                <a href="#" type="button" class="btn btn-danger" data-bs-toggle="modal"
-                                   data-bs-target="#exampleModal">Удалить</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 mb-3 mb-sm-0">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Инвестиции</h5>
-                            <div class="d-flex gap-2 flex-sm-wrap">
-                                <a href="/income-category-edit" class="btn btn-primary">Редактировать</a>
-                                <a href="#" type="button" class="btn btn-danger" data-bs-toggle="modal"
-                                   data-bs-target="#exampleModal">Удалить</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 mb-3 mb-sm-0">
-                    <div class="card income-add">
-                        <a href="/income-category-create" class="text-decoration-none">+</a>
-                    </div>
-                </div>
+            <div class="card-list row g-3">
+<!--                <div class="col-sm-4 mb-3 mb-sm-0">-->
+<!--                    <div class="card">-->
+<!--                        <div class="card-body">-->
+<!--                            <h5 class="card-title">Депозиты</h5>-->
+<!--                            <div class="d-flex gap-2 flex-sm-wrap">-->
+<!--                                <a href="/income-category-edit" class="btn btn-primary">Редактировать</a>-->
+<!--                                <a href="#" type="button" class="btn btn-danger" data-bs-toggle="modal"-->
+<!--                                   data-bs-target="#exampleModal">Удалить</a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-sm-4 mb-3 mb-sm-0">-->
+<!--                    <div class="card">-->
+<!--                        <div class="card-body">-->
+<!--                            <h5 class="card-title">Зарплата</h5>-->
+<!--                            <div class="d-flex gap-2 flex-sm-wrap">-->
+<!--                                <a href="/income-category-edit" class="btn btn-primary">Редактировать</a>-->
+<!--                                <a href="#" type="button" class="btn btn-danger" data-bs-toggle="modal"-->
+<!--                                   data-bs-target="#exampleModal">Удалить</a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-sm-4 mb-3 mb-sm-0">-->
+<!--                    <div class="card">-->
+<!--                        <div class="card-body">-->
+<!--                            <h5 class="card-title">Сбережения</h5>-->
+<!--                            <div class="d-flex gap-2 flex-sm-wrap">-->
+<!--                                <a href="/income-category-edit" class="btn btn-primary">Редактировать</a>-->
+<!--                                <a href="#" type="button" class="btn btn-danger" data-bs-toggle="modal"-->
+<!--                                   data-bs-target="#exampleModal">Удалить</a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-sm-4 mb-3 mb-sm-0">-->
+<!--                    <div class="card">-->
+<!--                        <div class="card-body">-->
+<!--                            <h5 class="card-title">Инвестиции</h5>-->
+<!--                            <div class="d-flex gap-2 flex-sm-wrap">-->
+<!--                                <a href="/income-category-edit" class="btn btn-primary">Редактировать</a>-->
+<!--                                <a href="#" type="button" class="btn btn-danger" data-bs-toggle="modal"-->
+<!--                                   data-bs-target="#exampleModal">Удалить</a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-sm-4 mb-3 mb-sm-0">-->
+<!--                    <div class="card income-add">-->
+<!--                        <a href="/income-category-create" class="text-decoration-none income-href">+</a>-->
+<!--                    </div>-->
+<!--                </div>-->
             </div>
         </div>
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -68,8 +68,8 @@
                             Связанные доходы будут удалены навсегда.</h1>
                     </div>
                     <div class="modal-body">
-                        <button type="button" class="btn btn-success mx-2" data-bs-dismiss="modal">Да, удалить</button>
-                        <button type="button" class="btn btn-danger">Не удалять</button>
+                        <button type="button" id="btn-delete" class="btn btn-success mx-2" data-bs-dismiss="modal">Да, удалить</button>
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Не удалять</button>
                     </div>
 
                 </div>

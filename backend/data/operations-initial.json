@@ -6,7 +6,7 @@
     "category_income_id": 2,
     "type": "income",
     "amount": 50000,
-    "date": "2022-09-11",
+    "date": "2024-12-04",
     "comment": "ЗП"
   },
   {
@@ -16,7 +16,7 @@
     "category_income_id": null,
     "type": "expense",
     "amount": 2500,
-    "date": "2022-09-12",
+    "date": "2024-12-04",
     "comment": "Оплата квартиры"
   },
   {

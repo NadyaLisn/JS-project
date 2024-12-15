@@ -56,7 +56,7 @@ export class SignUp {
         let fullName = this.nameElement.value.split(' ');
         if (this.validateForm()) {
 
-            const result = await HttpUtils.request('/signup', 'POST', {
+            const result = await HttpUtils.request('/signup', 'POST', false, {
                 name: fullName[1],
                 lastName: fullName[0],
                 email: this.emailElement.value,

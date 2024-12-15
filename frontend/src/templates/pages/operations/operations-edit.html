@@ -1,0 +1,27 @@
+<main>
+    <section class="page">
+        <div class="page-title">
+            Редактирование дохода/расхода
+        </div>
+
+            <select id="type-select" class="form-control mb-3">
+                <option value="income">доход</option>
+                <option value="expense">расход</option>
+            </select>
+
+            <select id="category-select" class="form-control mb-3"></select>
+
+            <input id="amount-input" type="number" class="form-control mb-3" placeholder="Сумма в $">
+            <p id="amount-input-error" class="invalid-feedback m-0">Введите сумму</p>
+
+            <input id="date-input" type="date" class="form-control mb-3">
+            <p id="date-input-error" class="invalid-feedback m-0">Заполните дату</p>
+
+            <input id="comment-input" type="text" class="form-control mb-3" placeholder="Комментарий...">
+
+            <div class="action d-flex flex-column flex-sm-row gap-2">
+                <button id="btn-save" class="btn btn-success">Сохранить</button>
+                <button id="btn-cancel" class="btn btn-danger">Отмена</button>
+            </div>
+    </section>
+</main>

@@ -6,7 +6,7 @@ export class HttpUtils {
 
 
     static async request(url, method = "GET",
-                         // useAuth = true,
+                         useAuth = true,
                          body = null) {
         const result = {
             error: false,
@@ -36,25 +36,30 @@ export class HttpUtils {
 
         let response = null;
 
-        response = await fetch(config.api + url, params);
-        result.response = await response.json();
+        try {
+            response = await fetch(config.api + url, params);
+            result.response = await response.json();
+        } catch (e) {
+            result.error = true;
+            return result;
+        }
 
 
         if (response.status < 200 || response.status >= 300) {
             result.error = true;
-            // if (useAuth && response.status === 401) {
-            //     if (!token) {
-            //         result.redirect = '/login';
-            //     } else {
-            //         const updateTokenResult = await Auth.updateRefreshToken();
-            //         if (updateTokenResult) {
-            //             return this.request(url, method, useAuth, body);
-            //         } else {
-            //             result.redirect = 'login';
-            //         }
-            //
-            //     }
-            // }
+            if (useAuth && response.status === 401) {
+                if (!token) {
+                    result.redirect = '/login';
+                } else {
+                    const updateTokenResult = await Auth.updateRefreshToken();
+                    if (updateTokenResult) {
+                        return this.request(url, method, useAuth, body);
+                    } else {
+                        result.redirect = 'login';
+                    }
+
+                }
+            }
         }
 
         return result;

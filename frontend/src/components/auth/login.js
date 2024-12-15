@@ -40,7 +40,7 @@ export class Login {
     async login() {
         this.commonErrorElement.style.display = 'none';
         if (this.validateForm()) {
-            const result = await HttpUtils.request('/login', 'POST', {
+            const result = await HttpUtils.request('/login', 'POST', false, {
                 email: this.emailElement.value,
                 password: this.passwordElement.value,
                 rememberMe: this.rememberMeElement.checked
@@ -53,7 +53,8 @@ export class Login {
 
             Auth.setAuthInfo(result.response.tokens.accessToken, result.response.tokens.refreshToken, {
                 id: result.response.user.id,
-                name: result.response.user.name
+                name: result.response.user.name,
+                lastName: result.response.user.lastName
             });
 
             this.openNewRoute('/');

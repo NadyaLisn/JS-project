@@ -1,61 +1,67 @@
-<section class="main">
+<section class="page main">
     <div>
-        <div class="main-title">
+        <div class="page-title">
             Главная
         </div>
         <div class="date-list d-flex align-items-center ">
-            <ul class="nav nav-pills gap-2 align-items-center">
-                <li class="nav-item-main nav-main-active">
-                    <a class="nav-link nav-link-active" aria-current="page" href="#">Сегодня</a>
-                </li>
-                <li class="nav-item-main">
-                    <a class="nav-link" href="#">Неделя</a>
-                </li>
-                <li class="nav-item-main">
-                    <a class="nav-link" href="#">Месяц</a>
-                </li>
-                <li class="nav-item-main">
-                    <a class="nav-link" href="#">Год</a>
-                </li>
-                <li class="nav-item-main">
-                    <a class="nav-link" href="#">Все</a>
-                </li>
-                <li class="nav-item-main">
-                    <a class="nav-link" href="#">Интервал</a>
-                </li>
-                <li class="nav-item-main">
-                    <div class="interval d-flex">
-                        <div class="interval-from">
-                            <span class="mx-1">с</span>
-                            <a href="#" id="interval-from" class="mx-3">Дата</a>
+            <button type="button" class="btn nav-item-main ">Сегодня</button>
+            <button type="button" class="btn nav-item-main nav-main" data-period="week" id="period-week">Неделя</button>
+            <button type="button" class="btn nav-item-main nav-main" data-period="month" id="period-month">Месяц
+            </button>
+            <button type="button" class="btn nav-item-main nav-main" data-period="year" id="period-year">Год</button>
+            <button type="button" class="btn nav-item-main nav-main" data-period="all" id="period-all">Все</button>
+            <button type="button" class="btn  nav-item-main nav-main" data-period="interval" id="period-interval">
+                Интервал
+            </button>
+
+            <div class="nav-item-main d-flex align-items-center">
+                <div class="interval d-flex r">
+                    <div class="interval-from d-flex align-items-center">
+                        <div
+                                class="interval-to-span mx-4">с
                         </div>
-                        <div class="interval-to">
-                            <span class="mx-2">по</span>
-                            <a href="#" id="interval-to">Дата</a>
+                        <div>
+                            <input type="date" class="data-choice" id="interval-from">
+                            <span id="interval-from-error" class="error invalid-feedback">Дата начала</span>
                         </div>
+
                     </div>
-                </li>
-            </ul>
+                    <div class="interval-to d-flex align-items-center">
+                        <span class="interval-to-span mx-4">по</span>
+                        <div>
+                            <input type="date" class="data-choice" id="interval-to">
+                            <span id="interval-from-to-error" class="error invalid-feedback ">Дата окончания</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
     <div class="row charts">
-        <div class="revenue col-sm-6">
-            <div class="income-title">
+
+        <div class="chart-col chart-income col-sm-6">
+            <div class="chart-title">
                 Доходы
             </div>
-            <div class="income-chart">
-                <div>
-                    <canvas id="myChart"></canvas>
-                </div>
+
+            <div class="chart-canvas">
+                <canvas id="income-chart"></canvas>
             </div>
+
         </div>
-        <div class="expenses col-sm-6">
-            <div class="expenses-title">
+
+        <div class="chart-col col-sm-6">
+            <div class="chart-title">
                 Расходы
             </div>
-            <div class="expenses-chart">
-
+            <div  class="chart-canvas">
+                <canvas id="expense-chart"></canvas>
             </div>
+
         </div>
+
+
     </div>
 </section>
