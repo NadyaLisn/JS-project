@@ -11,11 +11,13 @@ export class Main {
         this.chartIncome = document.getElementById('income-chart');
         this.chartExpenses = document.getElementById('expense-chart');
         this.btnOnclick();
+        this.btnToday =  document.getElementById('period-today')
+        this.btnToday.classList.add('active-btn')
         this.arrayCategoryIncome = [];
         this.arrayAmountIncome = [];
         this.arrayCategoryExpense = [];
         this.arrayAmountExpense = [];
-
+        this.getPeriod().then();
     }
 
     btnOnclick() {
@@ -24,6 +26,7 @@ export class Main {
                 const period = e.target.getAttribute('data-period');
                 this.inputFromInterval.classList.remove('is-invalid');
                 this.inputToInterval.classList.remove('is-invalid');
+                this.btnToday.classList.remove('active-btn');
                 if (period === "interval") {
                     if (!this.validateForm()) {
                         e.preventDefault();

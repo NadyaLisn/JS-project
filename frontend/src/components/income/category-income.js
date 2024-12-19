@@ -9,7 +9,7 @@ export class CategoryIncome {
 
         this.cardListElement = document.querySelector('.card-list');
 
-        this.modalBtnRemoveElement = document.getElementById('btn-delete');
+        this.btnDelete = document.getElementById('btn-delete');
         this.getCategoryIncome().then()
 
     }
@@ -45,15 +45,15 @@ export class CategoryIncome {
                                        <h5 class="card-title text-nowrap">${category.title}</h5>
                                        <div class="d-flex gap-2 flex-sm-wrap">
                                            <a href="/income-category-edit?id=${category.id}" class="btn btn-primary" id="btn-edit">Редактировать</a>
-                                           <a href="/categories/income?id=${category.id}" type="button" class="btn btn-danger" data-bs-toggle="modal"
-                                              data-bs-target="#exampleModal">Удалить</a>
+                                         <a href="/categories/income?id=${category.id}" type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                              data-bs-target="#exampleModal">Удалить</a>  
                                        </div>
                                 </div>
                                </div>
                                   `;
             cardElement.appendChild(card);
             this.cardListElement.appendChild(cardElement);
-            this.modalBtnRemoveElement.onclick = () => {
+            this.btnDelete.onclick = () => {
                 this.deleteCategoryIncome(UrlParams.getUrlParam('id'), cardElement);
             }
 

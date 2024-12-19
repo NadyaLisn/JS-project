@@ -198,6 +198,18 @@ main {
     color: white;
   }
 
+  .active-btn {
+    background: rgb(108, 117, 125);
+    border: transparent;
+    color: white;
+  }
+
+  .operation-delete {
+    border: none;
+    background: none;
+  }
+
+
   /*charts*/
 
   .charts {
@@ -249,8 +261,8 @@ main {
     margin-bottom: 10px;
   }
 .card {
-  min-width: 350px;
-  min-height: 120px;
+  width: 350px;
+  height: 120px;
 }
 }
 

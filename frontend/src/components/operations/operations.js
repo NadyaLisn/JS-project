@@ -118,19 +118,37 @@ export class Operations {
             trElement.insertCell().innerText = operation.comment;
 
             trElement.insertCell().innerHTML = `
-      <a href="/operations?id=${operation.id}" class="icon-table mx-2" data-bs-toggle="modal"
-                                           data-bs-target="#exampleModal" id="open">
+      <button class="icon-table mx-2 operation-delete" data-bs-toggle="modal"
+                                              data-bs-target="#exampleModal" id="open">
                                             <img src="/images/trash-icon.png" alt="">
-                                        </a>
+                                        </button>
                                         <a href="/operations-edit?id=${operation.id}" class="icon-table">
                                             <img src="/images/pen-icon.png" alt="">
                                         </a>
       `;
             this.tableElement.appendChild(trElement);
-            this.btnDeleteOperation.onclick = () => {
-                this.openNewRoute("/operations-delete?id=" + operation.id)
-            }
+
+            trElement.querySelector('.operation-delete').addEventListener('click', () => {
+
+                this.btnDeleteOperation.onclick = () => {
+                    this.deleteOperation(operation.id, trElement).then();
+                }
+
+            });
         });
+    }
+
+    async deleteOperation(id, trElement) {
+        try {
+            const result = await HttpUtils.request('/operations/' + id, 'DELETE');
+            if (result) {
+                trElement.remove();
+            } else {
+              alert('Ошибка при удалении операции, обратитесь в поддержку')
+            }
+        } catch  {
+            alert('Ошибка при удалении операции, обратитесь в поддержку')
+        }
     }
 
 }
